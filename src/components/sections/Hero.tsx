@@ -60,11 +60,11 @@ export default function Hero() {
           </div>
 
           <div className="flex gap-7 mt-10">
-            <Stat value="40" suffix="+" label="Seviye" />
+            <Stat value="1.8K" label="İndirme" />
             <div className="w-px" style={{ background: "var(--color-border-thin)" }} />
-            <Stat value="12" label="Karakter" />
+            <Stat value="8" label="Yorum" />
             <div className="w-px" style={{ background: "var(--color-border-thin)" }} />
-            <Stat value="4.8" suffix="★" suffixColor="#F6C344" label="Puan" />
+            <Stat value="4.5" suffix="★" suffixColor="#F6C344" label="Puan" />
           </div>
         </Reveal>
 
