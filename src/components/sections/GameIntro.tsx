@@ -2,8 +2,8 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
 
 const items = [
-  "40+ el yapımı seviye, gerçek İstanbul semtlerinden ilham alan rotalar",
-  "12 farklı karakter ve açılabilir kostümler",
+  "Zorluğu kademeli artan, elle tasarlanmış engel ve rota çeşitliliği",
+  "4 farklı karakter ve açılabilir kostümler",
   "Offline oynanabilir — internet olmadan da koş",
 ];
 
@@ -30,7 +30,7 @@ export default function GameIntro() {
             Şehir durmaz, sen de durma.
           </h2>
           <p className="text-text-body text-base md:text-lg leading-[1.7] mb-6 max-w-[520px]">
-            Yetish, İstanbul&apos;un enerjisini bir sonsuz koşu oyununa taşıyor. Otobüsü kaçırma, coin topla, engellerden kaç ve şehri baştan keşfet.
+            Yetish, İstanbul&apos;un enerjisini oyuna özel tasarlanmış bir harita üzerinde sonsuz bir koşuya taşıyor. Coin topla, engellerden kaç ve şehri keşfet.
           </p>
           <ul className="flex flex-col gap-3">
             {items.map((item) => (

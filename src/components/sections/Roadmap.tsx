@@ -1,9 +1,9 @@
 import Reveal from "@/components/ui/Reveal";
 
 const roadmap = [
-  { quarter: "Q2 2026", title: "YAYINDA", text: "Yetish App Store ve Google Play'de.", live: true },
-  { quarter: "Q3 2026", title: "Sıralama & Turnuva", text: "Haftalık liderlik tablosu ve turnuvalar." },
-  { quarter: "Q4 2026", title: "Yeni Şehir: İzmir", text: "İkinci şehir haritası ve yeni karakterler." },
+  { quarter: "03.2026", title: "YAYINDA", text: "Yetish App Store ve Google Play'de.", live: true },
+  { quarter: "06.2026", title: "Sıralama & Turnuva", text: "Haftalık liderlik tablosu ve turnuvalar." },
+  { quarter: "2027", title: "Yeni Şehir", text: "Yeni bir şehir düşünülüyor, detaylar ilerleyen süreçte paylaşılacak." },
   { quarter: "2027", title: "İkinci Oyun", text: "Stüdyonun yeni oyunu duyurulacak." },
 ];
 
