@@ -65,27 +65,6 @@ export default function GamesPage() {
             </div>
           </div>
         </Reveal>
-
-        <Reveal delay={0.12}>
-          <div
-            className="rounded-2xl border overflow-hidden opacity-85"
-            style={{ background: "var(--color-card)", borderColor: "var(--color-border)", borderStyle: "dashed" }}
-          >
-            <div className="relative">
-              <ImagePlaceholder label="Yeni Şehir: İzmir key-art (16:10)" aspect="16/10" radius={0} className="w-full" />
-              <span
-                className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold"
-                style={{ background: "var(--color-bg-dark)", color: "var(--color-text-muted)" }}
-              >
-                Planlama
-              </span>
-            </div>
-            <div className="p-6">
-              <h2 className="font-heading font-extrabold text-2xl mb-2">Yeni Şehir: İzmir</h2>
-              <p className="text-text-body text-sm leading-relaxed">Yetish evreninin ikinci şehri planlama aşamasında.</p>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
