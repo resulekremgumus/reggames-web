@@ -2,10 +2,10 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
 
 const characters = [
-  { name: "Deniz", tag: "Hızlı" },
-  { name: "Zeynep", tag: "Çevik" },
-  { name: "Kaya", tag: "Dayanıklı" },
-  { name: "Mavi", tag: "✦ Efsanevi", legendary: true },
+  { name: "Arda", tag: "Hızlı" },
+  { name: "Metin", tag: "Çevik" },
+  { name: "Selin", tag: "Dayanıklı" },
+  { name: "Zehra", tag: "✦ Efsanevi", legendary: true },
 ];
 
 export default function Characters() {
