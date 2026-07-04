@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "RegGames — İstanbul'dan mobil oyun stüdyosu",
   description:
-    "RegGames, İstanbul merkezli bağımsız bir mobil oyun stüdyosu. İlk oyunu Yetish — İstanbul temalı sonsuz koşu oyunu.",
+    "RegGames, İstanbul merkezli bağımsız bir mobil oyun stüdyosu. İlk oyunu Yetish — engellerden kaçtığın hızlı bir sonsuz koşu oyunu.",
 };
 
 export default function RootLayout({

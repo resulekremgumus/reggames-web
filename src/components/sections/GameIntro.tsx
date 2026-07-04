@@ -30,7 +30,7 @@ export default function GameIntro() {
             Şehir durmaz, sen de durma.
           </h2>
           <p className="text-text-body text-base md:text-lg leading-[1.7] mb-6 max-w-[520px]">
-            Yetish, İstanbul&apos;un enerjisini oyuna özel tasarlanmış bir harita üzerinde sonsuz bir koşuya taşıyor. Coin topla, engellerden kaç ve şehri keşfet.
+            Yetish, seni hız kesmeyen bir sonsuz koşuya davet ediyor. Coin topla, engellerden kaç ve mesafe arttıkça devreye giren yeni engel desenleriyle mücadele et.
           </p>
           <ul className="flex flex-col gap-3">
             {items.map((item) => (

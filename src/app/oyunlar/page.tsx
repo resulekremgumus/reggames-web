@@ -38,7 +38,7 @@ export default function GamesPage() {
             <div className="p-6">
               <h2 className="font-heading font-extrabold text-2xl mb-2">Yetish</h2>
               <p className="text-text-body text-sm leading-relaxed mb-4">
-                İstanbul&apos;un enerjisiyle dolu bir dünyada koş, engellerden kaç, coin topla.
+                Engellerden kaç, coin topla, güçlendirmelerle yolunu aç — mesafe arttıkça zorlaşan sonsuz bir koşu.
               </p>
               <span className="text-primary font-body font-bold text-sm">İncele →</span>
             </div>

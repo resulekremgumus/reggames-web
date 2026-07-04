@@ -1,5 +1,5 @@
 const TEXT =
-  "YETİSH ✦ İSTANBUL ✦ ENDLESS RUNNER ✦ REGGAMES STUDIO ✦ LOW-POLY ✦ MOBILE FIRST ✦ ";
+  "YETİSH ✦ ENDLESS RUNNER ✦ REGGAMES STUDIO ✦ LOW-POLY ✦ COIN TOPLA ✦ MOBILE FIRST ✦ ";
 
 export default function Ticker() {
   return (

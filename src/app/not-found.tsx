@@ -14,7 +14,7 @@ export default function NotFound() {
       <h1 className="font-heading font-black text-[clamp(70px,16vw,140px)] leading-none">
         4<span className="text-primary">0</span>4
       </h1>
-      <h2 className="font-heading font-bold text-2xl md:text-3xl mt-4 mb-3">Bu sayfa bir otobüse yetişemedi</h2>
+      <h2 className="font-heading font-bold text-2xl md:text-3xl mt-4 mb-3">Bu sayfa bir engele çarptı</h2>
       <p className="text-text-body max-w-[440px] mb-8">
         Aradığın sayfa taşınmış ya da hiç var olmamış olabilir. Ana sayfaya dönüp koşmaya devam edebilirsin.
       </p>

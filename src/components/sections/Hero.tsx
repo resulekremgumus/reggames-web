@@ -42,7 +42,7 @@ export default function Hero() {
           </h1>
 
           <p className="font-body text-[clamp(16px,1.9vw,20px)] leading-[1.55] text-text-body max-w-[440px] mt-5 mb-8">
-            İstanbul&apos;un enerjisiyle dolu bir dünyada koş, engellerden kaç, coin topla ve güçlendirmelerle yolunu aç — önünde sonsuz bir koşu var.
+            Engellerden kaç, coin topla, güçlendirmelerle yolunu aç — mesafe arttıkça zorlaşan sonsuz bir koşu seni bekliyor.
           </p>
 
           <div className="flex flex-wrap gap-3.5">
