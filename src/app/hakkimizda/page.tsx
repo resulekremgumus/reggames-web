@@ -13,7 +13,7 @@ const values = [
   { n: "03", title: "Özen", text: "Her detay — piksel piksel, seviye seviye — özenle işleniyor." },
 ];
 
-const team = ["Resul", "Ekip Üyesi 2", "Ekip Üyesi 3", "Ekip Üyesi 4"];
+const team = ["Resul Ekrem Gümüş"];
 
 export default function AboutPage() {
   return (
@@ -77,7 +77,7 @@ export default function AboutPage() {
             <Reveal key={name} delay={i * 0.06} className="text-center">
               <ImagePlaceholder label="Ekip fotoğrafı" shape="circle" className="w-[120px] h-[120px] mx-auto mb-3" />
               <div className="font-heading font-semibold text-base">{name}</div>
-              <div className="text-text-muted text-sm">Ekip Üyesi</div>
+              <div className="text-text-muted text-sm">Kurucu</div>
             </Reveal>
           ))}
         </div>
