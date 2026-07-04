@@ -22,8 +22,8 @@ export default function PrivacyPage() {
       <LegalSection title="İletişim">
         <p>
           Sorularınız için bize{" "}
-          <a href="mailto:merhaba@reggames.net" className="text-primary">
-            merhaba@reggames.net
+          <a href="mailto:reggamesstudio@gmail.com" className="text-primary">
+            reggamesstudio@gmail.com
           </a>{" "}
           adresinden ulaşabilirsiniz.
         </p>
