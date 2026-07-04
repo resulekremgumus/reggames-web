@@ -2,7 +2,7 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
 
 const items = [
-  "Zorluğu kademeli artan, elle tasarlanmış engel ve rota çeşitliliği",
+  "Mesafe arttıkça zorlaşan, elle tasarlanmış onlarca engel deseni",
   "4 farklı karakter ve açılabilir kostümler",
   "Offline oynanabilir — internet olmadan da koş",
 ];
