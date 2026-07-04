@@ -6,6 +6,12 @@ const characters = [
   { name: "Metin", tag: "Çevik" },
   { name: "Selin", tag: "Dayanıklı" },
   { name: "Zehra", tag: "✦ Efsanevi", legendary: true },
+  { comingSoon: true },
+  { comingSoon: true },
+  { comingSoon: true },
+  { comingSoon: true },
+  { comingSoon: true },
+  { comingSoon: true },
 ];
 
 export default function Characters() {
@@ -19,19 +25,38 @@ export default function Characters() {
           <h2 className="font-heading font-extrabold text-[clamp(30px,4vw,52px)] tracking-[-0.02em]">Karakterler</h2>
         </Reveal>
         <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(210px,1fr))" }}>
-          {characters.map((c, i) => (
-            <Reveal key={c.name} delay={i * 0.06}>
-              <div className="rg-lift rounded-2xl border overflow-hidden" style={{ background: "var(--color-card)", borderColor: "var(--color-border)" }}>
-                <ImagePlaceholder label={`${c.name} render (3:4)`} aspect="3/4" radius={0} className="w-full" />
-                <div className="p-4">
-                  <div className="font-heading font-bold text-base">{c.name}</div>
-                  <div className="text-sm mt-1" style={{ color: c.legendary ? "#F6C344" : "var(--color-text-muted)" }}>
-                    {c.tag}
+          {characters.map((c, i) =>
+            c.comingSoon ? (
+              <Reveal key={`soon-${i}`} delay={i * 0.06}>
+                <div
+                  className="relative rounded-2xl border overflow-hidden opacity-70"
+                  style={{ background: "var(--color-card)", borderColor: "var(--color-border)", borderStyle: "dashed" }}
+                >
+                  <ImagePlaceholder label="" aspect="3/4" radius={0} className="w-full" />
+                  <div
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{ background: "rgba(9,17,31,.55)" }}
+                  >
+                    <span className="font-heading font-bold text-sm tracking-[0.08em] uppercase" style={{ color: "var(--color-secondary)" }}>
+                      Yakında
+                    </span>
                   </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ) : (
+              <Reveal key={c.name} delay={i * 0.06}>
+                <div className="rg-lift rounded-2xl border overflow-hidden" style={{ background: "var(--color-card)", borderColor: "var(--color-border)" }}>
+                  <ImagePlaceholder label={`${c.name} render (3:4)`} aspect="3/4" radius={0} className="w-full" />
+                  <div className="p-4">
+                    <div className="font-heading font-bold text-base">{c.name}</div>
+                    <div className="text-sm mt-1" style={{ color: c.legendary ? "#F6C344" : "var(--color-text-muted)" }}>
+                      {c.tag}
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ),
+          )}
         </div>
       </div>
     </section>
