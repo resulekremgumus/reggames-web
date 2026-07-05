@@ -11,7 +11,6 @@ export default function TermsPage() {
       <LegalSection title="Kabul">
         <p>
           Yetish uygulamasını indirerek ve kullanarak bu kullanım şartlarını kabul etmiş olursunuz.
-          Bu şartları kabul etmemeniz halinde uygulamayı kullanmamanızı rica ederiz.
         </p>
       </LegalSection>
 
