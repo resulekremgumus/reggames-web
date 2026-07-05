@@ -11,7 +11,7 @@ export default function TermsPage() {
       <LegalSection title="Kabul">
         <p>
           Yetish uygulamasını indirerek ve kullanarak bu kullanım şartlarını kabul etmiş olursunuz.
-          Bu şartları kabul etmiyorsanız uygulamayı kullanmayınız.
+          Bu şartları kabul etmemeniz halinde uygulamayı kullanmamanızı rica ederiz.
         </p>
       </LegalSection>
 
@@ -66,8 +66,8 @@ export default function TermsPage() {
       <LegalSection title="İletişim">
         <p>
           Sorularınız için{" "}
-          <a href="mailto:resul.reg96@gmail.com" className="text-primary">
-            resul.reg96@gmail.com
+          <a href="mailto:reggamesstudio@gmail.com" className="text-primary">
+            reggamesstudio@gmail.com
           </a>{" "}
           adresine ulaşabilirsiniz.
         </p>
