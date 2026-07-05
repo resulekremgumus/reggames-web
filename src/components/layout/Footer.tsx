@@ -67,6 +67,7 @@ export default function Footer() {
           links={[
             { href: "/gizlilik", label: "Gizlilik Politikası" },
             { href: "/sartlar", label: "Kullanım Şartları" },
+            { href: "/veri-silme", label: "Veri Silme" },
             { href: "/404", label: "404" },
           ]}
         />
