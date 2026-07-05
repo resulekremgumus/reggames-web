@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Gizlilik Politikası / Privacy Policy" updated="Temmuz 5, 2026">
+    <LegalPage title="Gizlilik Politikası" updated="Temmuz 5, 2026">
       <LegalSection title="Giriş">
         <p>
           RegGames, mobil uygulama ve oyunlar geliştiren bir yazılım geliştiricisidir. RegGames tarafından sunulan tüm uygulamalar ücretsiz olarak sunulmaktadır.
@@ -17,14 +17,14 @@ export default function PrivacyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="Bilgi Toplama ve Kullanımı / Information Collection and Use">
+      <LegalSection title="Bilgi Toplama ve Kullanımı">
         <p>RegGames uygulamaları; ad, e-posta adresi veya hassas konum verisi gibi kişisel bilgileri doğrudan toplamaz.</p>
         <p>
           Ancak kullanıcı deneyimini iyileştirmek, liderlik tablosu hizmetleri sağlamak, analitik toplamak ve bildirim göndermek amacıyla aşağıdaki üçüncü taraf hizmetlerden yararlanılmaktadır. Bu hizmetler bazı teknik verileri toplayabilir.
         </p>
       </LegalSection>
 
-      <LegalSection title="Üçüncü Taraf Hizmetler / Third-Party Services">
+      <LegalSection title="Üçüncü Taraf Hizmetler">
         <div>
           <h3 className="font-heading font-semibold text-white text-base mb-1.5">1. Unity LevelPlay (ironSource) — Reklam Platformu</h3>
           <p>
@@ -105,8 +105,8 @@ export default function PrivacyPage() {
         </p>
         <p>
           Firebase Firestore&apos;da saklanan anonim cihaz verileri için silme talebi{" "}
-          <a href="mailto:resul.reg96@gmail.com" className="text-primary">
-            resul.reg96@gmail.com
+          <a href="mailto:reggamesstudio@gmail.com" className="text-primary">
+            reggamesstudio@gmail.com
           </a>{" "}
           adresine iletilebilir.
         </p>
