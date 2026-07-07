@@ -2,10 +2,10 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
 
 const characters = [
-  { name: "Arda", tag: "Hızlı" },
-  { name: "Metin", tag: "Çevik" },
-  { name: "Selin", tag: "Dayanıklı" },
-  { name: "Zeynep", tag: "Güçlü" },
+  { name: "Arda" },
+  { name: "Metin" },
+  { name: "Selin" },
+  { name: "Zeynep" },
   { comingSoon: true },
   { comingSoon: true },
   { comingSoon: true },
@@ -49,9 +49,6 @@ export default function Characters() {
                   <ImagePlaceholder label={`${c.name} render (3:4)`} aspect="3/4" radius={0} className="w-full" />
                   <div className="p-4">
                     <div className="font-heading font-bold text-base">{c.name}</div>
-                    <div className="text-sm mt-1" style={{ color: "var(--color-text-muted)" }}>
-                      {c.tag}
-                    </div>
                   </div>
                 </div>
               </Reveal>
