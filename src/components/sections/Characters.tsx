@@ -5,7 +5,7 @@ const characters = [
   { name: "Arda", tag: "Hızlı" },
   { name: "Metin", tag: "Çevik" },
   { name: "Selin", tag: "Dayanıklı" },
-  { name: "Zehra", tag: "✦ Efsanevi", legendary: true },
+  { name: "Zeynep", tag: "Güçlü" },
   { comingSoon: true },
   { comingSoon: true },
   { comingSoon: true },
@@ -49,7 +49,7 @@ export default function Characters() {
                   <ImagePlaceholder label={`${c.name} render (3:4)`} aspect="3/4" radius={0} className="w-full" />
                   <div className="p-4">
                     <div className="font-heading font-bold text-base">{c.name}</div>
-                    <div className="text-sm mt-1" style={{ color: c.legendary ? "#F6C344" : "var(--color-text-muted)" }}>
+                    <div className="text-sm mt-1" style={{ color: "var(--color-text-muted)" }}>
                       {c.tag}
                     </div>
                   </div>
