@@ -4,7 +4,7 @@ const features = [
   { icon: "👆", bg: "rgba(34,211,197,.14)", title: "Tek Dokunuş", text: "Sıçra, kay, koş — tüm kontroller tek parmakla." },
   { icon: "⚡", bg: "rgba(246,195,68,.14)", title: "Zorlaşan Mücadele", text: "Mesafe arttıkça devreye giren onlarca elle tasarlanmış engel deseni." },
   { icon: "🔺", bg: "rgba(50,213,131,.14)", title: "Low-Poly Estetik", text: "Sade, şık, modern görsel dil." },
-  { icon: "📴", bg: "rgba(34,211,197,.14)", title: "Offline Oynanır", text: "İnternetin olmadığı yerde bile koşmaya devam." },
+  { icon: "📴", bg: "rgba(34,211,197,.14)", title: "Çevrimdışı Oynanır", text: "İnternetin olmadığı yerde bile koşmaya devam." },
 ];
 
 export default function Features() {

@@ -4,7 +4,7 @@ import Reveal from "@/components/ui/Reveal";
 const items = [
   "Mesafe arttıkça zorlaşan, elle tasarlanmış onlarca engel deseni",
   "4 farklı karakter ve açılabilir kostümler",
-  "Offline oynanabilir — internet olmadan da koş",
+  "Çevrimdışı oynanabilir — internet olmadan da koş",
 ];
 
 export default function GameIntro() {

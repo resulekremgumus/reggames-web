@@ -6,7 +6,7 @@ import Reveal from "@/components/ui/Reveal";
 const faqs = [
   { q: "Yetish ücretsiz mi?", a: "Evet, Yetish indirmesi ve oynanışı tamamen ücretsizdir. İsteğe bağlı kozmetik satın alımlar mevcuttur." },
   { q: "Hangi platformlarda oynanabilir?", a: "iOS (App Store) ve Android (Google Play) üzerinde oynanabilir." },
-  { q: "Offline oynanabilir mi?", a: "Evet, internet bağlantısı olmadan da oynayabilirsin." },
+  { q: "Çevrimdışı oynanabilir mi?", a: "Evet, internet bağlantısı olmadan da oynayabilirsin." },
   { q: "RegGames nerede?", a: "RegGames, İstanbul merkezli bağımsız bir mobil oyun stüdyosudur." },
 ];
 
