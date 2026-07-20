@@ -2,11 +2,46 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Parallax from "@/components/ui/Parallax";
 import Reveal from "@/components/ui/Reveal";
 import ComingSoonButton from "@/components/ui/ComingSoonButton";
+import { Locale } from "@/lib/i18n";
 
 const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.reggames.yetish&hl=tr";
 
-export default function Hero() {
+const dict = {
+  tr: {
+    badge: "Yeni · Endless Runner",
+    description:
+      "Engellerden kaç, coin topla, güçlendirmelerle yolunu aç — mesafe arttıkça zorlaşan sonsuz bir koşu seni bekliyor.",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+    comingSoonMsg: "Yakında! App Store'da 🚀",
+    stats: [
+      { value: "1.8K", label: "İndirme" },
+      { value: "8", label: "Yorum" },
+      { value: "4.5", suffix: "★", suffixColor: "#F6C344", label: "Puan" },
+    ],
+    phoneLabel: "Yetish oyun içi görsel (9:19)",
+    coinBadge: "+250 coin 🪙",
+  },
+  en: {
+    badge: "New · Endless Runner",
+    description:
+      "Dodge obstacles, collect coins, unlock power-ups — an endless run that gets harder the further you go.",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+    comingSoonMsg: "Coming soon on the App Store! 🚀",
+    stats: [
+      { value: "1.8K", label: "Downloads" },
+      { value: "8", label: "Reviews" },
+      { value: "4.5", suffix: "★", suffixColor: "#F6C344", label: "Rating" },
+    ],
+    phoneLabel: "Yetish in-game screenshot (9:19)",
+    coinBadge: "+250 coin 🪙",
+  },
+};
+
+export default function Hero({ locale = "tr" }: { locale?: Locale }) {
+  const t = dict[locale];
   return (
     <section
       id="hero"
@@ -34,7 +69,7 @@ export default function Hero() {
         <Reveal>
           <span className="inline-flex items-center gap-2 font-body font-bold text-xs tracking-[0.14em] text-primary px-3.5 py-1.5 border rounded-full uppercase" style={{ borderColor: "rgba(34,211,197,.4)" }}>
             <span className="w-[7px] h-[7px] rounded-full bg-primary" style={{ boxShadow: "0 0 8px #22D3C5" }} />
-            Yeni · Endless Runner
+            {t.badge}
           </span>
 
           <h1 className="font-heading font-black text-[clamp(56px,17vw,104px)] md:text-[clamp(58px,7.5vw,104px)] leading-[.94] tracking-[-0.03em] mt-5" style={{ textShadow: "0 12px 50px rgba(0,0,0,.5)" }}>
@@ -42,12 +77,15 @@ export default function Hero() {
           </h1>
 
           <p className="font-body text-[clamp(16px,1.9vw,20px)] leading-[1.55] text-text-body max-w-[440px] mt-5 mb-8">
-            Engellerden kaç, coin topla, güçlendirmelerle yolunu aç — mesafe arttıkça zorlaşan sonsuz bir koşu seni bekliyor.
+            {t.description}
           </p>
 
           <div className="flex flex-wrap gap-3.5">
-            <ComingSoonButton className="rg-btn-primary rg-breathe inline-flex items-center gap-2.5 px-6 py-4 bg-primary text-cta-on-primary rounded-[13px] font-body font-bold text-base border-0 cursor-pointer">
-              <AppleIcon /> App Store
+            <ComingSoonButton
+              message={t.comingSoonMsg}
+              className="rg-btn-primary rg-breathe inline-flex items-center gap-2.5 px-6 py-4 bg-primary text-cta-on-primary rounded-[13px] font-body font-bold text-base border-0 cursor-pointer"
+            >
+              <AppleIcon /> {t.appStore}
             </ComingSoonButton>
             <a
               href={GOOGLE_PLAY_URL}
@@ -55,16 +93,16 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="rg-btn-ghost inline-flex items-center gap-2.5 px-6 py-4 bg-transparent text-white border border-border rounded-[13px] font-body font-semibold text-base no-underline"
             >
-              <PlayIcon /> Google Play
+              <PlayIcon /> {t.googlePlay}
             </a>
           </div>
 
           <div className="flex gap-7 mt-10">
-            <Stat value="1.8K" label="İndirme" />
+            <Stat value={t.stats[0].value} label={t.stats[0].label} />
             <div className="w-px" style={{ background: "var(--color-border-thin)" }} />
-            <Stat value="8" label="Yorum" />
+            <Stat value={t.stats[1].value} label={t.stats[1].label} />
             <div className="w-px" style={{ background: "var(--color-border-thin)" }} />
-            <Stat value="4.5" suffix="★" suffixColor="#F6C344" label="Puan" />
+            <Stat value={t.stats[2].value} suffix={t.stats[2].suffix} suffixColor={t.stats[2].suffixColor} label={t.stats[2].label} />
           </div>
         </Reveal>
 
@@ -81,7 +119,7 @@ export default function Hero() {
               }}
             >
               <span className="absolute top-0 left-1/2 -translate-x-1/2 w-[52%] h-[22px] rounded-b-[14px] z-[3]" style={{ background: "#1a2740" }} />
-              <ImagePlaceholder label="Yetish oyun içi görsel (9:19)" aspect="9/19" className="w-full h-full" />
+              <ImagePlaceholder label={t.phoneLabel} aspect="9/19" className="w-full h-full" />
             </div>
             <span
               className="absolute -bottom-3.5 -right-4 px-4 py-2 rounded-xl font-body font-bold text-sm"
@@ -92,7 +130,7 @@ export default function Hero() {
                 boxShadow: "0 12px 30px -12px rgba(0,0,0,.7)",
               }}
             >
-              +250 coin 🪙
+              {t.coinBadge}
             </span>
           </Parallax>
         </Reveal>

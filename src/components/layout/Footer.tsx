@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ComingSoonButton from "@/components/ui/ComingSoonButton";
+import { Locale, localePaths } from "@/lib/i18n";
 
 const stars = [
   { top: "10%", left: "8%", delay: "0s" },
@@ -10,8 +11,46 @@ const stars = [
   { top: "35%", left: "88%", delay: "1.5s" },
 ];
 
-export default function Footer() {
+const dict = {
+  tr: {
+    tagline: "İstanbul'dan dünyaya, sonsuz koşulu mobil oyunlar.",
+    gameCol: "Oyun",
+    games: "Oyunlar",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+    studioCol: "Stüdyo",
+    about: "Hakkımızda",
+    legalCol: "Yasal",
+    privacy: "Gizlilik Politikası",
+    terms: "Kullanım Şartları",
+    dataDeletion: "Veri Silme",
+    notFound: "404",
+    notFoundHref: "/404",
+    rights: (year: number) => `© ${year} RegGames. Tüm hakları saklıdır.`,
+    madeWith: "Made with ♥ in İstanbul",
+  },
+  en: {
+    tagline: "Endless-running mobile games, from İstanbul to the world.",
+    gameCol: "Game",
+    games: "Games",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+    studioCol: "Studio",
+    about: "About",
+    legalCol: "Legal",
+    privacy: "Privacy Policy",
+    terms: "Terms of Use",
+    dataDeletion: "Data Deletion",
+    notFound: "404",
+    notFoundHref: "/en/404",
+    rights: (year: number) => `© ${year} RegGames. All rights reserved.`,
+    madeWith: "Made with ♥ in İstanbul",
+  },
+};
+
+export default function Footer({ locale = "tr" }: { locale?: Locale }) {
   const year = new Date().getFullYear();
+  const t = dict[locale];
 
   return (
     <footer className="relative overflow-hidden bg-bg-dark px-[clamp(18px,5vw,52px)] pt-16 pb-8">
@@ -34,9 +73,7 @@ export default function Footer() {
               REG<span className="text-primary">GAMES</span>
             </span>
           </div>
-          <p className="text-text-muted text-sm max-w-[220px]">
-            İstanbul&apos;dan dünyaya, sonsuz koşulu mobil oyunlar.
-          </p>
+          <p className="text-text-muted text-sm max-w-[220px]">{t.tagline}</p>
           <div className="flex gap-2 mt-5">
             {["X", "IG", "DC"].map((s) => (
               <span
@@ -50,25 +87,25 @@ export default function Footer() {
         </div>
 
         <FooterCol
-          title="Oyun"
+          title={t.gameCol}
           links={[
-            { href: "/oyunlar", label: "Oyunlar" },
-            { href: "#", label: "App Store", comingSoon: true },
+            { href: localePaths[locale].games, label: t.games },
+            { href: "#", label: t.appStore, comingSoon: true },
             {
               href: "https://play.google.com/store/apps/details?id=com.reggames.yetish&hl=tr",
-              label: "Google Play",
+              label: t.googlePlay,
               external: true,
             },
           ]}
         />
-        <FooterCol title="Stüdyo" links={[{ href: "/hakkimizda", label: "Hakkımızda" }]} />
+        <FooterCol title={t.studioCol} links={[{ href: localePaths[locale].about, label: t.about }]} />
         <FooterCol
-          title="Yasal"
+          title={t.legalCol}
           links={[
-            { href: "/gizlilik", label: "Gizlilik Politikası" },
-            { href: "/sartlar", label: "Kullanım Şartları" },
-            { href: "/veri-silme", label: "Veri Silme" },
-            { href: "/404", label: "404" },
+            { href: localePaths[locale].privacy, label: t.privacy },
+            { href: localePaths[locale].terms, label: t.terms },
+            { href: localePaths[locale].dataDeletion, label: t.dataDeletion },
+            { href: t.notFoundHref, label: t.notFound },
           ]}
         />
       </div>
@@ -77,8 +114,8 @@ export default function Footer() {
         className="relative max-w-[1160px] mx-auto mt-12 pt-6 border-t flex flex-col sm:flex-row justify-between gap-2 text-xs text-text-faint"
         style={{ borderColor: "var(--color-border-thin-2)" }}
       >
-        <span>© {year} RegGames. Tüm hakları saklıdır.</span>
-        <span>Made with ♥ in İstanbul</span>
+        <span>{t.rights(year)}</span>
+        <span>{t.madeWith}</span>
       </div>
     </footer>
   );

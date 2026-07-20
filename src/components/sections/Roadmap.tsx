@@ -1,21 +1,37 @@
 import Reveal from "@/components/ui/Reveal";
+import { Locale } from "@/lib/i18n";
 
-const roadmap = [
-  { quarter: "03.2026", title: "ANDROID'DE YAYINDA", text: "Yetish Google Play'de yayında, App Store yakında.", live: true },
-  { quarter: "06.2026", title: "Sıralama & Turnuva", text: "Haftalık liderlik tablosu ve turnuvalar." },
-  { quarter: "2027", title: "Yeni Şehir", text: "Yeni bir şehir düşünülüyor, detaylar ilerleyen süreçte paylaşılacak." },
-  { quarter: "2027", title: "İkinci Oyun", text: "Stüdyonun yeni oyunu duyurulacak." },
-];
+const dict = {
+  tr: {
+    heading: "Yol Haritası",
+    items: [
+      { quarter: "03.2026", title: "ANDROID'DE YAYINDA", text: "Yetish Google Play'de yayında, App Store yakında.", live: true },
+      { quarter: "06.2026", title: "Sıralama & Turnuva", text: "Haftalık liderlik tablosu ve turnuvalar." },
+      { quarter: "2027", title: "Yeni Şehir", text: "Yeni bir şehir düşünülüyor, detaylar ilerleyen süreçte paylaşılacak." },
+      { quarter: "2027", title: "İkinci Oyun", text: "Stüdyonun yeni oyunu duyurulacak." },
+    ],
+  },
+  en: {
+    heading: "Roadmap",
+    items: [
+      { quarter: "03.2026", title: "LIVE ON ANDROID", text: "Yetish is live on Google Play, App Store coming soon.", live: true },
+      { quarter: "06.2026", title: "Ranked & Tournaments", text: "Weekly leaderboards and tournaments." },
+      { quarter: "2027", title: "New City", text: "A new city is in the works — details coming soon." },
+      { quarter: "2027", title: "Second Game", text: "The studio's next game will be announced." },
+    ],
+  },
+};
 
-export default function Roadmap() {
+export default function Roadmap({ locale = "tr" }: { locale?: Locale }) {
+  const t = dict[locale];
   return (
     <section className="px-[clamp(18px,5vw,52px)] py-[clamp(64px,9vw,112px)]" style={{ background: "var(--color-bg-alt)" }}>
       <div className="max-w-[1160px] mx-auto">
         <Reveal className="text-center mb-12">
-          <h2 className="font-heading font-extrabold text-[clamp(30px,4vw,52px)] tracking-[-0.02em]">Yol Haritası</h2>
+          <h2 className="font-heading font-extrabold text-[clamp(30px,4vw,52px)] tracking-[-0.02em]">{t.heading}</h2>
         </Reveal>
         <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(230px,1fr))" }}>
-          {roadmap.map((r, i) => (
+          {t.items.map((r, i) => (
             <Reveal key={r.title} delay={i * 0.06}>
               <div
                 className="h-full p-6 rounded-2xl border"

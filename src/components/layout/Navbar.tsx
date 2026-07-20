@@ -3,18 +3,41 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { Locale, localePaths, otherLocaleHref } from "@/lib/i18n";
 
-const links = [
-  { href: "/", label: "Ana Sayfa" },
-  { href: "/oyunlar", label: "Oyunlar" },
-  { href: "/hakkimizda", label: "Hakkımızda" },
-];
+const dict = {
+  tr: {
+    links: [
+      { href: "/", label: "Ana Sayfa" },
+      { href: "/oyunlar", label: "Oyunlar" },
+      { href: "/hakkimizda", label: "Hakkımızda" },
+    ],
+    play: "Oyna",
+    playArrow: "Oyna →",
+    menu: "Menü",
+    close: "Kapat",
+  },
+  en: {
+    links: [
+      { href: "/en", label: "Home" },
+      { href: "/en/games", label: "Games" },
+      { href: "/en/about", label: "About" },
+    ],
+    play: "Play",
+    playArrow: "Play →",
+    menu: "Menu",
+    close: "Close",
+  },
+};
 
-export default function Navbar() {
+export default function Navbar({ locale = "tr" }: { locale?: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
+  const t = dict[locale];
+  const heroHref = locale === "tr" ? "/#hero" : "/en#hero";
+  const langHref = otherLocaleHref(pathname, locale);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -38,7 +61,7 @@ export default function Navbar() {
           borderColor: scrolled ? "var(--color-border-thin-2)" : "transparent",
         }}
       >
-        <Link href="/" className="flex items-center gap-2.5 no-underline">
+        <Link href={localePaths[locale].home} className="flex items-center gap-2.5 no-underline">
           <span
             className="inline-block w-[22px] h-[22px] rounded-[5px] rotate-45"
             style={{
@@ -52,28 +75,40 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-[clamp(18px,3vw,34px)]">
-          {links.map((l) => (
+          {t.links.map((l) => (
             <Link key={l.href} href={l.href} className="rg-link">
               {l.label}
             </Link>
           ))}
           <Link
-            href="/#hero"
+            href={langHref}
+            className="rg-link"
+            style={{ borderLeft: "1px solid var(--color-border)", paddingLeft: "clamp(18px,3vw,34px)" }}
+          >
+            {locale === "tr" ? "EN" : "TR"}
+          </Link>
+          <Link
+            href={heroHref}
             className="rg-btn-primary rg-breathe px-5 py-2.5 bg-primary text-cta-on-primary rounded-[10px] font-body font-bold text-sm no-underline"
           >
-            Oyna
+            {t.play}
           </Link>
         </div>
 
-        <button
-          onClick={() => setOpen(true)}
-          aria-label="Menü"
-          className="md:hidden flex flex-col gap-[5px] bg-transparent border border-border rounded-[9px] p-[11px] cursor-pointer"
-        >
-          <span className="w-[18px] h-[2px] bg-white block rounded-full" />
-          <span className="w-[18px] h-[2px] bg-white block rounded-full" />
-          <span className="w-[18px] h-[2px] bg-white block rounded-full" />
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <Link href={langHref} className="rg-link text-sm">
+            {locale === "tr" ? "EN" : "TR"}
+          </Link>
+          <button
+            onClick={() => setOpen(true)}
+            aria-label={t.menu}
+            className="flex flex-col gap-[5px] bg-transparent border border-border rounded-[9px] p-[11px] cursor-pointer"
+          >
+            <span className="w-[18px] h-[2px] bg-white block rounded-full" />
+            <span className="w-[18px] h-[2px] bg-white block rounded-full" />
+            <span className="w-[18px] h-[2px] bg-white block rounded-full" />
+          </button>
+        </div>
       </nav>
 
       <div
@@ -92,13 +127,13 @@ export default function Navbar() {
           </span>
           <button
             onClick={() => setOpen(false)}
-            aria-label="Kapat"
+            aria-label={t.close}
             className="bg-transparent border border-border rounded-[9px] text-white text-xl w-[42px] h-[42px] leading-none"
           >
             ✕
           </button>
         </div>
-        {links.map((l) => (
+        {t.links.map((l) => (
           <Link
             key={l.href}
             href={l.href}
@@ -109,10 +144,10 @@ export default function Navbar() {
           </Link>
         ))}
         <Link
-          href="/#hero"
+          href={heroHref}
           className="mt-7 text-center py-4 bg-primary text-cta-on-primary rounded-xl font-body font-bold text-lg no-underline"
         >
-          Oyna →
+          {t.playArrow}
         </Link>
       </div>
     </>

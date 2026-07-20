@@ -2,11 +2,34 @@
 
 import Reveal from "@/components/ui/Reveal";
 import Link from "next/link";
+import { Locale, localePaths } from "@/lib/i18n";
 
 const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.reggames.yetish&hl=tr";
 
-export default function Contact() {
+const dict = {
+  tr: {
+    heading: "Şehre koşmaya hazır mısın?",
+    download: "Ücretsiz İndir",
+    about: "Hakkımızda",
+    namePh: "Ad",
+    emailPh: "E-posta",
+    messagePh: "Mesaj",
+    send: "Gönder",
+  },
+  en: {
+    heading: "Ready to start running?",
+    download: "Download Free",
+    about: "About",
+    namePh: "Name",
+    emailPh: "Email",
+    messagePh: "Message",
+    send: "Send",
+  },
+};
+
+export default function Contact({ locale = "tr" }: { locale?: Locale }) {
+  const t = dict[locale];
   return (
     <section className="px-[clamp(18px,5vw,52px)] py-[clamp(64px,9vw,112px)] max-w-[1160px] mx-auto">
       <Reveal>
@@ -21,7 +44,7 @@ export default function Contact() {
 
           <div className="relative">
             <h2 className="font-heading font-extrabold text-[clamp(28px,3.5vw,40px)] tracking-[-0.02em] mb-5">
-              Şehre koşmaya hazır mısın?
+              {t.heading}
             </h2>
             <div className="flex flex-wrap gap-3.5">
               <a
@@ -30,10 +53,10 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="rg-btn-primary px-6 py-4 bg-primary text-cta-on-primary rounded-[13px] font-body font-bold text-base no-underline"
               >
-                Ücretsiz İndir
+                {t.download}
               </a>
-              <Link href="/hakkimizda" className="rg-btn-ghost px-6 py-4 bg-transparent text-white border border-border rounded-[13px] font-body font-semibold text-base no-underline">
-                Hakkımızda
+              <Link href={localePaths[locale].about} className="rg-btn-ghost px-6 py-4 bg-transparent text-white border border-border rounded-[13px] font-body font-semibold text-base no-underline">
+                {t.about}
               </Link>
             </div>
           </div>
@@ -44,18 +67,18 @@ export default function Contact() {
           >
             <input
               type="text"
-              placeholder="Ad"
+              placeholder={t.namePh}
               className="px-4 py-3.5 rounded-xl bg-transparent border text-white placeholder:text-text-muted outline-none"
               style={{ borderColor: "var(--color-border)" }}
             />
             <input
               type="email"
-              placeholder="E-posta"
+              placeholder={t.emailPh}
               className="px-4 py-3.5 rounded-xl bg-transparent border text-white placeholder:text-text-muted outline-none"
               style={{ borderColor: "var(--color-border)" }}
             />
             <textarea
-              placeholder="Mesaj"
+              placeholder={t.messagePh}
               rows={3}
               className="px-4 py-3.5 rounded-xl bg-transparent border text-white placeholder:text-text-muted outline-none resize-none"
               style={{ borderColor: "var(--color-border)" }}
@@ -65,7 +88,7 @@ export default function Contact() {
               className="rg-btn-primary mt-1 px-6 py-3.5 rounded-xl font-body font-bold text-sm"
               style={{ background: "var(--color-secondary)", color: "var(--color-cta-on-secondary)" }}
             >
-              Gönder
+              {t.send}
             </button>
           </form>
         </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
+import { Locale } from "@/lib/i18n";
 
 const characters = [
   { name: "Arda", image: "/images/characters/arda.png" },
@@ -11,7 +12,13 @@ const characters = [
 
 const comingSoonCount = 6;
 
-export default function Characters() {
+const dict = {
+  tr: { heading: "Karakterler", comingSoon: "Yakında" },
+  en: { heading: "Characters", comingSoon: "Coming Soon" },
+};
+
+export default function Characters({ locale = "tr" }: { locale?: Locale }) {
+  const t = dict[locale];
   return (
     <section
       className="px-[clamp(18px,5vw,52px)] py-[clamp(64px,9vw,112px)]"
@@ -19,7 +26,7 @@ export default function Characters() {
     >
       <div className="max-w-[1160px] mx-auto">
         <Reveal className="text-center mb-12">
-          <h2 className="font-heading font-extrabold text-[clamp(30px,4vw,52px)] tracking-[-0.02em]">Karakterler</h2>
+          <h2 className="font-heading font-extrabold text-[clamp(30px,4vw,52px)] tracking-[-0.02em]">{t.heading}</h2>
         </Reveal>
         <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(210px,1fr))" }}>
           {characters.map((c, i) => (
@@ -53,7 +60,7 @@ export default function Characters() {
                   style={{ background: "rgba(9,17,31,.55)" }}
                 >
                   <span className="font-heading font-bold text-sm tracking-[0.08em] uppercase" style={{ color: "var(--color-secondary)" }}>
-                    Yakında
+                    {t.comingSoon}
                   </span>
                 </div>
               </div>
