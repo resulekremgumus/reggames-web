@@ -5,8 +5,8 @@ import Reveal from "@/components/ui/Reveal";
 const characters = [
   { name: "Arda", image: "/images/characters/arda.png" },
   { name: "Metin", image: "/images/characters/metin.png" },
-  { name: "Selin", image: "/images/characters/selin.png" },
-  { name: "Zeynep", image: "/images/characters/zeynep.png" },
+  { name: "Mehtap", image: "/images/characters/selin.png" },
+  { name: "Sevda", image: "/images/characters/zeynep.png" },
 ];
 
 const comingSoonCount = 6;
