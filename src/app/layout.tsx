@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://reggames.net"),
   title: "RegGames — İstanbul'dan mobil oyun stüdyosu",
   description:
     "RegGames, İstanbul merkezli bağımsız bir mobil oyun stüdyosu. İlk oyunu Yetish — engellerden kaçtığın hızlı bir sonsuz koşu oyunu.",

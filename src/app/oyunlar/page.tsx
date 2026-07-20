@@ -32,7 +32,7 @@ export default function GamesPage() {
                 className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold"
                 style={{ background: "var(--color-bg-dark)", color: "var(--color-success)" }}
               >
-                Yayında
+                Android&apos;de Yayında
               </span>
             </div>
             <div className="p-6">

@@ -2,10 +2,10 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import Reveal from "@/components/ui/Reveal";
 
 const outfits = [
-  { name: "Kadıköy", status: "Açık", color: "var(--color-success)" },
-  { name: "Vapur", status: "Lv.8", color: "var(--color-secondary)" },
-  { name: "Simit", status: "Lv.15", color: "var(--color-secondary)" },
-  { name: "Boğaz", status: "🔒 Lv.25", color: "var(--color-text-muted)" },
+  { name: "Klasik", status: "Açık", color: "var(--color-success)" },
+  { name: "Kırmızı Rüzgar", status: "Lv.8", color: "var(--color-secondary)" },
+  { name: "Gece Modu", status: "Lv.15", color: "var(--color-secondary)" },
+  { name: "Altın", status: "🔒 Lv.25", color: "var(--color-text-muted)" },
 ];
 
 export default function Outfits() {

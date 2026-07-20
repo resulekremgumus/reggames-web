@@ -1,7 +1,7 @@
 import Reveal from "@/components/ui/Reveal";
 
 const roadmap = [
-  { quarter: "03.2026", title: "YAYINDA", text: "Yetish App Store ve Google Play'de.", live: true },
+  { quarter: "03.2026", title: "ANDROID'DE YAYINDA", text: "Yetish Google Play'de yayında, App Store yakında.", live: true },
   { quarter: "06.2026", title: "Sıralama & Turnuva", text: "Haftalık liderlik tablosu ve turnuvalar." },
   { quarter: "2027", title: "Yeni Şehir", text: "Yeni bir şehir düşünülüyor, detaylar ilerleyen süreçte paylaşılacak." },
   { quarter: "2027", title: "İkinci Oyun", text: "Stüdyonun yeni oyunu duyurulacak." },
@@ -16,7 +16,7 @@ export default function Roadmap() {
         </Reveal>
         <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(230px,1fr))" }}>
           {roadmap.map((r, i) => (
-            <Reveal key={r.quarter} delay={i * 0.06}>
+            <Reveal key={r.title} delay={i * 0.06}>
               <div
                 className="h-full p-6 rounded-2xl border"
                 style={{

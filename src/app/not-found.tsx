@@ -3,14 +3,15 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <section className="flex flex-col items-center justify-center text-center px-6" style={{ minHeight: "82vh" }}>
-      <span
-        className="rg-float rg-spin3d block w-11 h-11 rounded-full mb-6"
-        style={{
-          background: "radial-gradient(circle at 35% 30%, #ffe08a, #F6C344 55%, #c98f14)",
-          boxShadow: "0 0 26px rgba(246,195,68,.5)",
-          animationDuration: "4s, 6s",
-        }}
-      />
+      <span className="rg-float inline-block mb-6">
+        <span
+          className="rg-spin3d block w-11 h-11 rounded-full"
+          style={{
+            background: "radial-gradient(circle at 35% 30%, #ffe08a, #F6C344 55%, #c98f14)",
+            boxShadow: "0 0 26px rgba(246,195,68,.5)",
+          }}
+        />
+      </span>
       <h1 className="font-heading font-black text-[clamp(70px,16vw,140px)] leading-none">
         4<span className="text-primary">0</span>4
       </h1>

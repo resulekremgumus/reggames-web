@@ -3,6 +3,9 @@
 import Reveal from "@/components/ui/Reveal";
 import Link from "next/link";
 
+const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.reggames.yetish&hl=tr";
+
 export default function Contact() {
   return (
     <section className="px-[clamp(18px,5vw,52px)] py-[clamp(64px,9vw,112px)] max-w-[1160px] mx-auto">
@@ -21,7 +24,12 @@ export default function Contact() {
               Şehre koşmaya hazır mısın?
             </h2>
             <div className="flex flex-wrap gap-3.5">
-              <a href="#" className="rg-btn-primary px-6 py-4 bg-primary text-cta-on-primary rounded-[13px] font-body font-bold text-base no-underline">
+              <a
+                href={GOOGLE_PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rg-btn-primary px-6 py-4 bg-primary text-cta-on-primary rounded-[13px] font-body font-bold text-base no-underline"
+              >
                 Ücretsiz İndir
               </a>
               <Link href="/hakkimizda" className="rg-btn-ghost px-6 py-4 bg-transparent text-white border border-border rounded-[13px] font-body font-semibold text-base no-underline">
