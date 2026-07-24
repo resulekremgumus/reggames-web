@@ -1,4 +1,4 @@
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import { Locale } from "@/lib/i18n";
 
@@ -35,7 +35,15 @@ export default function GameIntro({ locale = "tr" }: { locale?: Locale }) {
     <section className="px-[clamp(18px,5vw,52px)] py-[clamp(64px,9vw,112px)] max-w-[1160px] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-[.95fr_1.05fr] gap-14 items-center">
         <Reveal className="relative">
-          <ImagePlaceholder label={t.imageLabel} aspect="4/3" radius={20} className="w-full" />
+          <div className="relative w-full overflow-hidden rounded-[20px]" style={{ aspectRatio: "4/3" }}>
+            <Image
+              src="/images/game-intro/yetish-characters-group.png"
+              alt={t.imageLabel}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
           <span
             className="rg-spin3d absolute -top-4 -left-4 w-[46px] h-[46px] rounded-full"
             style={{
