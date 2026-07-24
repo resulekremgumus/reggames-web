@@ -1,4 +1,4 @@
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
+import Image from "next/image";
 import Parallax from "@/components/ui/Parallax";
 import Reveal from "@/components/ui/Reveal";
 import ComingSoonButton from "@/components/ui/ComingSoonButton";
@@ -119,7 +119,14 @@ export default function Hero({ locale = "tr" }: { locale?: Locale }) {
               }}
             >
               <span className="absolute top-0 left-1/2 -translate-x-1/2 w-[52%] h-[22px] rounded-b-[14px] z-[3]" style={{ background: "#1a2740" }} />
-              <ImagePlaceholder label={t.phoneLabel} aspect="9/19" className="w-full h-full" />
+              <Image
+                src="/images/hero/yetish-gameplay.png"
+                alt={t.phoneLabel}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 768px) 60vw, 300px"
+              />
             </div>
             <span
               className="absolute -bottom-3.5 -right-4 px-4 py-2 rounded-xl font-body font-bold text-sm"
