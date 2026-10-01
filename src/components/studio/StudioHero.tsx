@@ -47,7 +47,7 @@ export default function StudioHero({ locale = "tr" }: { locale?: Locale }) {
             className="relative w-full overflow-hidden rounded-[28px] opacity-[.22]"
             style={{ aspectRatio: "4/3", transform: "rotate(-7deg)", maskImage: "linear-gradient(90deg, #000 40%, transparent)" }}
           >
-            <Image src="/images/game-intro/yetish-characters-group.png" alt="" fill className="object-cover" sizes="560px" />
+            <Image src="/images/game-intro/yetish-characters-group.webp" alt="" fill className="object-cover" sizes="560px" />
           </div>
         </Parallax>
         <Parallax depth={18} className="absolute -right-[22%] md:-right-[4%] bottom-[5%] md:bottom-[10%] w-[min(86vw,600px)]">

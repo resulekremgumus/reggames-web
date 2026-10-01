@@ -47,8 +47,8 @@ export const games: Game[] = [
     },
     icon: "/images/yetish/icon.webp",
     keyArt: {
-      tr: "/images/game-intro/yetish-characters-group.png",
-      en: "/images/game-intro/yetish-characters-group.png",
+      tr: "/images/game-intro/yetish-characters-group.webp",
+      en: "/images/game-intro/yetish-characters-group.webp",
     },
     keyArtFit: "cover",
     keyArtPosition: "center 40%",

@@ -112,7 +112,7 @@ export default function Hero({ locale = "tr" }: { locale?: Locale }) {
             >
               <span className="absolute top-0 left-1/2 -translate-x-1/2 w-[52%] h-[22px] rounded-b-[14px] z-[3]" style={{ background: "#1a2740" }} />
               <Image
-                src="/images/hero/yetish-gameplay.png"
+                src="/images/hero/yetish-gameplay.webp"
                 alt={t.phoneLabel}
                 fill
                 priority

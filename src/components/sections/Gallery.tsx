@@ -3,13 +3,13 @@ import Reveal from "@/components/ui/Reveal";
 import { Locale } from "@/lib/i18n";
 
 const images = [
-  { file: "gallery-hero-cta.png", alt: { tr: "Şehirde koşmaya hazır mısın", en: "Ready to start running" } },
-  { file: "gallery-character-select.png", alt: { tr: "Kendi karakterini seç", en: "Choose your character" } },
-  { file: "gallery-leaderboard.png", alt: { tr: "Liderlik zirvesine çık", en: "Climb the leaderboard" } },
-  { file: "gallery-gameplay-run.png", alt: { tr: "Şehirde hızla koş", en: "Run fast through the city" } },
-  { file: "gallery-level-up.png", alt: { tr: "Seviyeni yükselt", en: "Level up" } },
-  { file: "gallery-obstacles.png", alt: { tr: "Engelleri aş", en: "Dodge the obstacles" } },
-  { file: "gallery-high-score.png", alt: { tr: "Rekorunu kır", en: "Beat your high score" } },
+  { file: "gallery-hero-cta.webp", alt: { tr: "Şehirde koşmaya hazır mısın", en: "Ready to start running" } },
+  { file: "gallery-character-select.webp", alt: { tr: "Kendi karakterini seç", en: "Choose your character" } },
+  { file: "gallery-leaderboard.webp", alt: { tr: "Liderlik zirvesine çık", en: "Climb the leaderboard" } },
+  { file: "gallery-gameplay-run.webp", alt: { tr: "Şehirde hızla koş", en: "Run fast through the city" } },
+  { file: "gallery-level-up.webp", alt: { tr: "Seviyeni yükselt", en: "Level up" } },
+  { file: "gallery-obstacles.webp", alt: { tr: "Engelleri aş", en: "Dodge the obstacles" } },
+  { file: "gallery-high-score.webp", alt: { tr: "Rekorunu kır", en: "Beat your high score" } },
 ];
 
 const dict = {

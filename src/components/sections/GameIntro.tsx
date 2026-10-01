@@ -37,7 +37,7 @@ export default function GameIntro({ locale = "tr" }: { locale?: Locale }) {
         <Reveal className="relative">
           <div className="relative w-full overflow-hidden rounded-[20px]" style={{ aspectRatio: "4/3" }}>
             <Image
-              src="/images/game-intro/yetish-characters-group.png"
+              src="/images/game-intro/yetish-characters-group.webp"
               alt={t.imageLabel}
               fill
               className="object-cover"

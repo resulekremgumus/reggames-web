@@ -4,10 +4,10 @@ import Reveal from "@/components/ui/Reveal";
 import { Locale } from "@/lib/i18n";
 
 const characters = [
-  { name: "Arda", image: "/images/characters/arda.png" },
-  { name: "Metin", image: "/images/characters/metin.png" },
-  { name: "Mehtap", image: "/images/characters/selin.png" },
-  { name: "Sevda", image: "/images/characters/zeynep.png" },
+  { name: "Arda", image: "/images/characters/arda.webp" },
+  { name: "Metin", image: "/images/characters/metin.webp" },
+  { name: "Mehtap", image: "/images/characters/selin.webp" },
+  { name: "Sevda", image: "/images/characters/zeynep.webp" },
 ];
 
 const comingSoonCount = 6;
