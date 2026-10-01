@@ -4,13 +4,13 @@ import "./globals.css";
 
 const outfit = Outfit({
   variable: "--font-outfit",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
 });
 
@@ -18,7 +18,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://reggames.net"),
   title: "RegGames — İstanbul'dan mobil oyun stüdyosu",
   description:
-    "RegGames, İstanbul merkezli bağımsız bir mobil oyun stüdyosu. İlk oyunu Yetish — engellerden kaçtığın hızlı bir sonsuz koşu oyunu.",
+    "RegGames, İstanbul merkezli bağımsız bir mobil oyun stüdyosu. Oyunlarımız: sonsuz koşu Yetish ve tangram bulmacası Kara Kutu.",
+  openGraph: {
+    type: "website",
+    siteName: "RegGames",
+    images: [{ url: "/og/studio.jpg", width: 1200, height: 630, alt: "RegGames" }],
+  },
 };
 
 export default function RootLayout({

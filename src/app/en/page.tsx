@@ -1,27 +1,27 @@
-import Hero from "@/components/sections/Hero";
-import Ticker from "@/components/sections/Ticker";
-import GameIntro from "@/components/sections/GameIntro";
-import Gallery from "@/components/sections/Gallery";
-import Features from "@/components/sections/Features";
-import Characters from "@/components/sections/Characters";
-import Outfits from "@/components/sections/Outfits";
-import Roadmap from "@/components/sections/Roadmap";
-import Faq from "@/components/sections/Faq";
+import StudioHero from "@/components/studio/StudioHero";
+import GamesShowcase from "@/components/studio/GamesShowcase";
+import StudioAbout from "@/components/studio/StudioAbout";
+import News from "@/components/studio/News";
 import Contact from "@/components/sections/Contact";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  locale: "en",
+  page: "home",
+  title: "RegGames — Mobile game studio from İstanbul",
+  description:
+    "RegGames is an independent mobile game studio based in İstanbul. Our games: the endless runner Yetish and the tangram puzzle Kara Kutu.",
+  image: "/og/studio.jpg",
+});
 
 export default function EnglishHome() {
   return (
     <>
-      <Hero locale="en" />
-      <Ticker locale="en" />
-      <GameIntro locale="en" />
-      <Gallery locale="en" />
-      <Features locale="en" />
-      <Characters locale="en" />
-      <Outfits locale="en" />
-      <Roadmap locale="en" />
-      <Faq locale="en" />
-      <Contact locale="en" />
+      <StudioHero locale="en" />
+      <GamesShowcase locale="en" />
+      <StudioAbout locale="en" />
+      <News locale="en" />
+      <Contact locale="en" variant="studio" />
     </>
   );
 }

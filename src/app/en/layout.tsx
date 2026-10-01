@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: "RegGames — Mobile game studio from İstanbul",
   description:
-    "RegGames is an independent mobile game studio based in İstanbul. Our first game, Yetish, is a fast endless runner about dodging obstacles.",
+    "RegGames is an independent mobile game studio based in İstanbul. Our games: the endless runner Yetish and the tangram puzzle Kara Kutu.",
 };
 
 export default function EnglishLayout({ children }: { children: React.ReactNode }) {
