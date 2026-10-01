@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPageEn() {
   return (
-    <LegalPage title="Privacy Policy" updated="July 5, 2026" locale="en">
+    <LegalPage title="Privacy Policy" updated="October 1, 2026" locale="en">
       <LegalSection title="Introduction">
         <p>
           RegGames is a software developer building mobile apps and games. All apps offered by RegGames are provided free of charge.
@@ -96,6 +96,41 @@ export default function PrivacyPageEn() {
               unity.com/legal/privacy-policy
             </a>
           </p>
+        </div>
+      </LegalSection>
+
+      <LegalSection title="Kara Kutu">
+        <p>Kara Kutu is a puzzle game developed by RegGames.</p>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Game Data</h3>
+          <p>
+            Progress, scores and settings are stored only on your device and are not sent to RegGames servers. Deleting the app also deletes this data.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Ads — Google AdMob</h3>
+          <p>
+            Ads in Kara Kutu are served by Google AdMob. AdMob may collect data such as the advertising identifier (IDFA/AAID), IP address, device model, operating system and ad interactions in order to serve ads, measure their performance and prevent fraud. Google privacy policy:{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary">
+              policies.google.com/privacy
+            </a>
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Permissions</h3>
+          <p>
+            On iPhone, tracking permission is requested for personalized ads. If you decline, ads are shown without personalization. You can change this at any time in Settings &gt; Privacy &amp; Security &gt; Tracking. Users in the European Economic Area, the United Kingdom and Switzerland are asked for consent through Google&apos;s consent form; this choice can be changed from the in-game Settings menu.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Children</h3>
+          <p>
+            Kara Kutu&apos;s content is suitable for all ages; however, the game is not directed at children under 13 and does not knowingly collect data from children of that age.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Data Deletion</h3>
+          <p>Kara Kutu does not store any player data on servers. For advertising data, Google&apos;s tools can be used.</p>
         </div>
       </LegalSection>
 

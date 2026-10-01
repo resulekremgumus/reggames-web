@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function DataDeletionPage() {
   return (
-    <LegalPage title="Veri Silme" updated="Temmuz 5, 2026">
+    <LegalPage title="Veri Silme" updated="Ekim 1, 2026">
       <LegalSection title="Hesap ve Liderlik Tablosu Verileri">
         <p>
           Yetish içindeki <strong>Ayarlar</strong> menüsünden <strong>&quot;Hesabı Sil&quot;</strong> seçeneğini kullanarak Unity Gaming Services (UGS) üzerindeki anonim liderlik tablosu hesabınızı ve ilgili tüm verileri kalıcı olarak silebilirsiniz. Bu işlem geri alınamaz.
@@ -32,6 +32,12 @@ export default function DataDeletionPage() {
             Gizlilik Politikası
           </a>{" "}
           sayfamıza bakabilirsiniz.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Kara Kutu">
+        <p>
+          Kara Kutu sunucuda hiçbir oyuncu verisi tutmaz; ilerleme ve skorlar yalnızca cihazınızda saklanır ve uygulamayı sildiğinizde silinir.
         </p>
       </LegalSection>
 

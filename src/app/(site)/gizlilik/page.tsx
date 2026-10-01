@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Gizlilik Politikası" updated="Temmuz 5, 2026">
+    <LegalPage title="Gizlilik Politikası" updated="Ekim 1, 2026">
       <LegalSection title="Giriş">
         <p>
           RegGames, mobil uygulama ve oyunlar geliştiren bir yazılım geliştiricisidir. RegGames tarafından sunulan tüm uygulamalar ücretsiz olarak sunulmaktadır.
@@ -96,6 +96,41 @@ export default function PrivacyPage() {
               unity.com/legal/privacy-policy
             </a>
           </p>
+        </div>
+      </LegalSection>
+
+      <LegalSection title="Kara Kutu">
+        <p>Kara Kutu, RegGames tarafından geliştirilen bir bulmaca oyunudur.</p>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Oyun Verileri</h3>
+          <p>
+            İlerleme, skorlar ve ayarlar yalnızca cihazınızda saklanır; RegGames sunucularına gönderilmez. Uygulamayı sildiğinizde bu veriler de silinir.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Reklamlar — Google AdMob</h3>
+          <p>
+            Kara Kutu&apos;daki reklamları Google AdMob gösterir. AdMob; reklam göstermek, reklamların etkisini ölçmek ve sahtekârlığı önlemek amacıyla reklam tanımlayıcısı (IDFA/AAID), IP adresi, cihaz modeli, işletim sistemi ve reklamlarla etkileşim gibi verileri toplayabilir. Google gizlilik politikası:{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary">
+              policies.google.com/privacy
+            </a>
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">İzinler</h3>
+          <p>
+            iPhone&apos;da kişiselleştirilmiş reklamlar için takip izni istenir. İzin verilmezse reklamlar kişiselleştirilmeden gösterilir. Bu izni istediğiniz zaman Ayarlar &gt; Gizlilik ve Güvenlik &gt; Takip bölümünden değiştirebilirsiniz. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre&apos;deki kullanıcılardan Google&apos;ın izin formuyla onay istenir; bu tercih oyundaki Ayarlar menüsünden değiştirilebilir.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Çocuklar</h3>
+          <p>
+            Kara Kutu&apos;nun içeriği tüm yaşlara uygundur; ancak oyun 13 yaşından küçük çocukları hedef kitle olarak almaz ve bu yaştaki çocuklardan bilerek veri toplamaz.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Veri Silme</h3>
+          <p>Kara Kutu sunucuda hiçbir oyuncu verisi tutmaz. Reklam verileri için Google&apos;ın araçları kullanılabilir.</p>
         </div>
       </LegalSection>
 

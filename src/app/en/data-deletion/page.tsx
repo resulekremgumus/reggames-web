@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function DataDeletionPageEn() {
   return (
-    <LegalPage title="Data Deletion" updated="July 5, 2026" locale="en">
+    <LegalPage title="Data Deletion" updated="October 1, 2026" locale="en">
       <LegalSection title="Account and Leaderboard Data">
         <p>
           You can permanently delete your anonymous Unity Gaming Services (UGS) leaderboard account and all related data using the <strong>&quot;Delete Account&quot;</strong> option in the <strong>Settings</strong> menu inside Yetish. This action cannot be undone.
@@ -32,6 +32,12 @@ export default function DataDeletionPageEn() {
             Privacy Policy
           </a>{" "}
           page for details.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Kara Kutu">
+        <p>
+          Kara Kutu does not store any player data on servers; progress and scores are kept only on your device and are deleted when you delete the app.
         </p>
       </LegalSection>
 
