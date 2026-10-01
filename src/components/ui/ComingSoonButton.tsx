@@ -7,10 +7,14 @@ export default function ComingSoonButton({
   className,
   children,
   message = "Yakında! App Store'da 🚀",
+  style,
+  ariaLabel,
 }: {
   className?: string;
   children: ReactNode;
   message?: string;
+  style?: React.CSSProperties;
+  ariaLabel?: string;
 }) {
   const [show, setShow] = useState(false);
 
@@ -22,7 +26,7 @@ export default function ComingSoonButton({
 
   return (
     <span className="relative inline-flex">
-      <button type="button" onClick={() => setShow(true)} className={className}>
+      <button type="button" onClick={() => setShow(true)} className={className} style={style} aria-label={ariaLabel}>
         {children}
       </button>
       <span

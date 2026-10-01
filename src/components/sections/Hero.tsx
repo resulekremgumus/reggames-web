@@ -1,20 +1,17 @@
 import Image from "next/image";
 import Parallax from "@/components/ui/Parallax";
 import Reveal from "@/components/ui/Reveal";
-import ComingSoonButton from "@/components/ui/ComingSoonButton";
+import StoreButton from "@/components/ui/StoreButton";
+import { getGame } from "@/lib/games";
 import { Locale } from "@/lib/i18n";
 
-const GOOGLE_PLAY_URL =
-  "https://play.google.com/store/apps/details?id=com.reggames.yetish&hl=tr";
+const yetish = getGame("yetish");
 
 const dict = {
   tr: {
     badge: "Yeni · Endless Runner",
     description:
       "Engellerden kaç, coin topla, güçlendirmelerle yolunu aç — mesafe arttıkça zorlaşan sonsuz bir koşu seni bekliyor.",
-    appStore: "App Store",
-    googlePlay: "Google Play",
-    comingSoonMsg: "Yakında! App Store'da 🚀",
     stats: [
       { value: "1.8K", label: "İndirme" },
       { value: "8", label: "Yorum" },
@@ -27,9 +24,6 @@ const dict = {
     badge: "New · Endless Runner",
     description:
       "Dodge obstacles, collect coins, unlock power-ups — an endless run that gets harder the further you go.",
-    appStore: "App Store",
-    googlePlay: "Google Play",
-    comingSoonMsg: "Coming soon on the App Store! 🚀",
     stats: [
       { value: "1.8K", label: "Downloads" },
       { value: "8", label: "Reviews" },
@@ -81,20 +75,18 @@ export default function Hero({ locale = "tr" }: { locale?: Locale }) {
           </p>
 
           <div className="flex flex-wrap gap-3.5">
-            <ComingSoonButton
-              message={t.comingSoonMsg}
-              className="rg-btn-primary rg-breathe inline-flex items-center gap-2.5 px-6 py-4 bg-primary text-cta-on-primary rounded-[13px] font-body font-bold text-base border-0 cursor-pointer"
-            >
-              <AppleIcon /> {t.appStore}
-            </ComingSoonButton>
-            <a
-              href={GOOGLE_PLAY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <StoreButton
+              game={yetish}
+              store="appStore"
+              locale={locale}
+              className="rg-btn-primary rg-breathe inline-flex items-center gap-2.5 px-6 py-4 bg-primary text-cta-on-primary rounded-[13px] font-body font-bold text-base border-0 cursor-pointer no-underline"
+            />
+            <StoreButton
+              game={yetish}
+              store="googlePlay"
+              locale={locale}
               className="rg-btn-ghost inline-flex items-center gap-2.5 px-6 py-4 bg-transparent text-white border border-border rounded-[13px] font-body font-semibold text-base no-underline"
-            >
-              <PlayIcon /> {t.googlePlay}
-            </a>
+            />
           </div>
 
           <div className="flex gap-7 mt-10">
@@ -170,22 +162,5 @@ function Stat({
       </div>
       <div className="font-body font-medium text-[13px] text-text-muted mt-0.5">{label}</div>
     </div>
-  );
-}
-
-function AppleIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M16.5 12.9c0-2 1-3 1.7-3.5-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .6 1 1.4 2.1 2.4 2 .9 0 1.3-.6 2.4-.6s1.4.6 2.4.6c1 0 1.6-1 2.2-2 .4-.6.6-1.2.8-1.8-1.8-.7-2.5-2.4-2.5-3.7Z" />
-      <path d="M14.5 6.2c.6-.7 1-1.6.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.5-.9 2.5 1 .1 1.9-.5 2.5-1.2Z" />
-    </svg>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m4 4 12 8-12 8V4Z" />
-    </svg>
   );
 }

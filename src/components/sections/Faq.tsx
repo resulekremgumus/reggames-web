@@ -25,9 +25,20 @@ const dict = {
   },
 };
 
-export default function Faq({ locale = "tr" }: { locale?: Locale }) {
+export type FaqItem = { q: string; a: string };
+
+// Varsayılan sorular Yetish'in; başka bir oyun kendi `heading` ve `items` değerlerini verir.
+export default function Faq({
+  locale = "tr",
+  heading,
+  items,
+}: {
+  locale?: Locale;
+  heading?: string;
+  items?: FaqItem[];
+}) {
   const [open, setOpen] = useState<number | null>(0);
-  const t = dict[locale];
+  const t = { heading: heading ?? dict[locale].heading, faqs: items ?? dict[locale].faqs };
 
   return (
     <section className="px-[clamp(18px,5vw,52px)] py-[clamp(64px,9vw,112px)] max-w-[820px] mx-auto">
