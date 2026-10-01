@@ -1,30 +1,28 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { games, gameHref } from "@/lib/games";
 import { Locale, localePaths, otherLocaleHref } from "@/lib/i18n";
 
 const dict = {
   tr: {
-    links: [
-      { href: "/", label: "Ana Sayfa" },
-      { href: "/oyunlar", label: "Oyunlar" },
-      { href: "/hakkimizda", label: "Hakkımızda" },
-    ],
-    play: "Oyna",
-    playArrow: "Oyna →",
+    home: "Ana Sayfa",
+    games: "Oyunlar",
+    about: "Hakkımızda",
+    allGames: "Tüm oyunlar →",
+    gamesMenu: "Oyunlar menüsü",
     menu: "Menü",
     close: "Kapat",
   },
   en: {
-    links: [
-      { href: "/en", label: "Home" },
-      { href: "/en/games", label: "Games" },
-      { href: "/en/about", label: "About" },
-    ],
-    play: "Play",
-    playArrow: "Play →",
+    home: "Home",
+    games: "Games",
+    about: "About",
+    allGames: "All games →",
+    gamesMenu: "Games menu",
     menu: "Menu",
     close: "Close",
   },
@@ -33,10 +31,12 @@ const dict = {
 export default function Navbar({ locale = "tr" }: { locale?: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [gamesOpen, setGamesOpen] = useState(false);
+  const gamesRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
   const t = dict[locale];
-  const heroHref = locale === "tr" ? "/#hero" : "/en#hero";
+  const paths = localePaths[locale];
   const langHref = otherLocaleHref(pathname, locale);
 
   useEffect(() => {
@@ -49,6 +49,7 @@ export default function Navbar({ locale = "tr" }: { locale?: Locale }) {
   if (pathname !== prevPathname) {
     setPrevPathname(pathname);
     setOpen(false);
+    setGamesOpen(false);
   }
 
   return (
@@ -75,23 +76,94 @@ export default function Navbar({ locale = "tr" }: { locale?: Locale }) {
         </Link>
 
         <div className="hidden md:flex items-center gap-[clamp(18px,3vw,34px)]">
-          {t.links.map((l) => (
-            <Link key={l.href} href={l.href} className="rg-link">
-              {l.label}
-            </Link>
-          ))}
+          <Link href={paths.home} className="rg-link">
+            {t.home}
+          </Link>
+          <div
+            ref={gamesRef}
+            className="relative"
+            onMouseEnter={() => setGamesOpen(true)}
+            onMouseLeave={() => setGamesOpen(false)}
+            onKeyDown={(e) => e.key === "Escape" && setGamesOpen(false)}
+            onBlur={(e) => {
+              if (!gamesRef.current?.contains(e.relatedTarget as Node)) setGamesOpen(false);
+            }}
+          >
+            <div className="flex items-center gap-1">
+              <Link href={paths.games} className="rg-link">
+                {t.games}
+              </Link>
+              <button
+                type="button"
+                aria-label={t.gamesMenu}
+                aria-expanded={gamesOpen}
+                aria-controls="nav-games-menu"
+                onClick={() => setGamesOpen((v) => !v)}
+                className="bg-transparent border-0 p-1 cursor-pointer text-text-body hover:text-white"
+              >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  aria-hidden="true"
+                  className="transition-transform duration-200"
+                  style={{ transform: gamesOpen ? "rotate(180deg)" : "none" }}
+                >
+                  <path d="M2 4.5 6 8l4-3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div
+              id="nav-games-menu"
+              className="absolute left-1/2 top-full pt-4 w-[300px] transition-all duration-200"
+              style={{
+                opacity: gamesOpen ? 1 : 0,
+                visibility: gamesOpen ? "visible" : "hidden",
+                transform: gamesOpen ? "translate(-50%, 0)" : "translate(-50%, -6px)",
+              }}
+            >
+              <div
+                className="rounded-2xl border p-2"
+                style={{
+                  background: "rgba(14,23,41,.97)",
+                  borderColor: "var(--color-border)",
+                  boxShadow: "0 24px 50px -20px rgba(0,0,0,.85)",
+                }}
+              >
+                {games.map((g) => (
+                  <Link
+                    key={g.slug}
+                    href={gameHref(g, locale)}
+                    className="flex items-center gap-3 p-2.5 rounded-xl no-underline hover:bg-white/5 transition-colors"
+                  >
+                    <Image src={g.icon} alt="" width={42} height={42} className="rounded-[11px] shrink-0" />
+                    <span>
+                      <span className="block font-heading font-bold text-[15px] text-white">{g.name}</span>
+                      <span className="block text-[13px]" style={{ color: g.theme.accent }}>
+                        {g.genre[locale]}
+                      </span>
+                    </span>
+                  </Link>
+                ))}
+                <Link
+                  href={paths.games}
+                  className="block mt-1 px-2.5 py-2.5 border-t text-sm font-bold text-primary no-underline"
+                  style={{ borderColor: "var(--color-border-thin)" }}
+                >
+                  {t.allGames}
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Link href={paths.about} className="rg-link">
+            {t.about}
+          </Link>
           <Link
             href={langHref}
             className="rg-link"
             style={{ borderLeft: "1px solid var(--color-border)", paddingLeft: "clamp(18px,3vw,34px)" }}
           >
             {locale === "tr" ? "EN" : "TR"}
-          </Link>
-          <Link
-            href={heroHref}
-            className="rg-btn-primary rg-breathe px-5 py-2.5 bg-primary text-cta-on-primary rounded-[10px] font-body font-bold text-sm no-underline"
-          >
-            {t.play}
           </Link>
         </div>
 
@@ -133,23 +205,34 @@ export default function Navbar({ locale = "tr" }: { locale?: Locale }) {
             ✕
           </button>
         </div>
-        {t.links.map((l) => (
-          <Link
-            key={l.href}
-            href={l.href}
-            className="font-heading font-bold text-2xl text-white py-4 border-b no-underline"
-            style={{ borderColor: "var(--color-border-thin)" }}
-          >
-            {l.label}
-          </Link>
-        ))}
-        <Link
-          href={heroHref}
-          className="mt-7 text-center py-4 bg-primary text-cta-on-primary rounded-xl font-body font-bold text-lg no-underline"
-        >
-          {t.playArrow}
-        </Link>
+        <MobileLink href={paths.home} onClick={() => setOpen(false)}>{t.home}</MobileLink>
+        <MobileLink href={paths.games} onClick={() => setOpen(false)}>{t.games}</MobileLink>
+        <div className="flex flex-col py-2 border-b" style={{ borderColor: "var(--color-border-thin)" }}>
+          {games.map((g) => (
+            <Link key={g.slug} href={gameHref(g, locale)} onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 pl-1 no-underline">
+              <Image src={g.icon} alt="" width={38} height={38} className="rounded-[10px] shrink-0" />
+              <span className="font-heading font-semibold text-lg text-white">{g.name}</span>
+              <span className="text-[13px] ml-auto" style={{ color: g.theme.accent }}>
+                {g.genre[locale]}
+              </span>
+            </Link>
+          ))}
+        </div>
+        <MobileLink href={paths.about} onClick={() => setOpen(false)}>{t.about}</MobileLink>
       </div>
     </>
+  );
+}
+
+function MobileLink({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className="font-heading font-bold text-2xl text-white py-4 border-b no-underline"
+      style={{ borderColor: "var(--color-border-thin)" }}
+    >
+      {children}
+    </Link>
   );
 }

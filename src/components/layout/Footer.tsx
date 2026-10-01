@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ComingSoonButton from "@/components/ui/ComingSoonButton";
+import { games, gameHref } from "@/lib/games";
 import { Locale, localePaths } from "@/lib/i18n";
 
 const stars = [
@@ -13,11 +13,9 @@ const stars = [
 
 const dict = {
   tr: {
-    tagline: "İstanbul'dan dünyaya, sonsuz koşulu mobil oyunlar.",
-    gameCol: "Oyun",
-    games: "Oyunlar",
-    appStore: "App Store",
-    googlePlay: "Google Play",
+    tagline: "İstanbul'dan, sade ve akılda kalan mobil oyunlar.",
+    gameCol: "Oyunlar",
+    games: "Tüm oyunlar",
     studioCol: "Stüdyo",
     about: "Hakkımızda",
     legalCol: "Yasal",
@@ -30,11 +28,9 @@ const dict = {
     madeWith: "Made with ♥ in İstanbul",
   },
   en: {
-    tagline: "Endless-running mobile games, from İstanbul to the world.",
-    gameCol: "Game",
-    games: "Games",
-    appStore: "App Store",
-    googlePlay: "Google Play",
+    tagline: "Simple, memorable mobile games from İstanbul.",
+    gameCol: "Games",
+    games: "All games",
     studioCol: "Studio",
     about: "About",
     legalCol: "Legal",
@@ -89,13 +85,8 @@ export default function Footer({ locale = "tr" }: { locale?: Locale }) {
         <FooterCol
           title={t.gameCol}
           links={[
+            ...games.map((g) => ({ href: gameHref(g, locale), label: g.name })),
             { href: localePaths[locale].games, label: t.games },
-            { href: "#", label: t.appStore, comingSoon: true },
-            {
-              href: "https://play.google.com/store/apps/details?id=com.reggames.yetish&hl=tr",
-              label: t.googlePlay,
-              external: true,
-            },
           ]}
         />
         <FooterCol title={t.studioCol} links={[{ href: localePaths[locale].about, label: t.about }]} />
@@ -126,36 +117,17 @@ function FooterCol({
   links,
 }: {
   title: string;
-  links: { href: string; label: string; external?: boolean; comingSoon?: boolean }[];
+  links: { href: string; label: string }[];
 }) {
   return (
     <div>
       <h4 className="font-heading font-bold text-sm text-white mb-4">{title}</h4>
       <div className="flex flex-col gap-3">
-        {links.map((l) =>
-          l.comingSoon ? (
-            <ComingSoonButton
-              key={l.label}
-              className="text-left text-text-muted text-sm hover:text-white transition-colors bg-transparent border-0 p-0 cursor-pointer"
-            >
-              {l.label}
-            </ComingSoonButton>
-          ) : l.external ? (
-            <a
-              key={l.label}
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-muted text-sm hover:text-white transition-colors"
-            >
-              {l.label}
-            </a>
-          ) : (
-            <Link key={l.label} href={l.href} className="text-text-muted text-sm hover:text-white transition-colors">
-              {l.label}
-            </Link>
-          ),
-        )}
+        {links.map((l) => (
+          <Link key={l.label} href={l.href} className="text-text-muted text-sm hover:text-white transition-colors">
+            {l.label}
+          </Link>
+        ))}
       </div>
     </div>
   );
