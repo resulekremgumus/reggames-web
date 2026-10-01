@@ -219,3 +219,30 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Kara Kutu sayfası: oyunun kendi renk dünyası. Ortak bileşenler (Faq vb.) bu değişkenler üzerinden uyum sağlar. */
+.kk-theme {
+  --kk-bg: #0d1117;
+  --kk-panel: #151b24;
+  --kk-amber: #ffb02e;
+  --kk-orange: #ff8a3d;
+  --kk-text: #f4f1ea;
+  --kk-wood: #6a5645;
+
+  --color-primary: var(--kk-amber);
+  --color-card: var(--kk-panel);
+  --color-border: #29313d;
+  --color-text-body: #c8c3b8;
+  --color-text-muted: #8f8a80;
+
+  background: var(--kk-bg);
+  color: var(--kk-text);
+}
+
+.kk-theme .kk-heading {
+  font-family: var(--font-baloo), var(--font-heading);
+}
+
+.kk-theme .rg-lift:hover {
+  border-color: rgba(255, 176, 46, 0.45);
+}
