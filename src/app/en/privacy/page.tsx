@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPageEn() {
   return (
-    <LegalPage title="Privacy Policy" updated="October 1, 2026" locale="en">
+    <LegalPage title="Privacy Policy" updated="October 3, 2026" locale="en">
       <LegalSection title="Introduction">
         <p>
           RegGames is a software developer building mobile apps and games. All apps offered by RegGames are provided free of charge.
@@ -131,6 +131,27 @@ export default function PrivacyPageEn() {
         <div>
           <h3 className="font-heading font-semibold text-white text-base mb-1.5">Data Deletion</h3>
           <p>Kara Kutu does not store any player data on servers. For advertising data, Google&apos;s tools can be used.</p>
+        </div>
+      </LegalSection>
+
+      <LegalSection title="Website (reggames.net)">
+        <p>
+          reggames.net does not directly collect personal information such as your name or email address from visitors. The site is hosted on Vercel, which may process technical connection data such as IP addresses to deliver the service and keep it secure.
+        </p>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Google Analytics and Cookies</h3>
+          <p>
+            We use Google Analytics to understand how the site is used, but <strong>only if you choose &quot;Accept&quot; in the cookie banner</strong>. If you don&apos;t consent, Google Analytics is not loaded and no analytics cookies are set.
+          </p>
+          <p>
+            With your consent, Google Analytics collects information such as the pages you visit, visit duration, device and browser type, approximate location (country, city) and how you arrived at the site. To do this it sets cookies named <code>_ga</code> and <code>_ga_*</code> in your browser (for up to 2 years). Google Analytics does not log IP addresses. Data is kept in Google Analytics for at most 14 months.
+          </p>
+          <p>
+            You can change your choice at any time with the <strong>&quot;Cookie preferences&quot;</strong> link at the bottom of the page. Your choice is stored in your browser&apos;s local storage, not in a cookie. Google privacy policy:{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary">
+              policies.google.com/privacy
+            </a>
+          </p>
         </div>
       </LegalSection>
 

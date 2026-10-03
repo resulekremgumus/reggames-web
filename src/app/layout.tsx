@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
+import CookieConsent from "@/components/consent/CookieConsent";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -33,7 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${outfit.variable} ${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-bg text-text">{children}</body>
+      <body className="min-h-full flex flex-col bg-bg text-text">
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

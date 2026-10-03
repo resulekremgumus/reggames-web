@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Gizlilik Politikası" updated="Ekim 1, 2026">
+    <LegalPage title="Gizlilik Politikası" updated="Ekim 3, 2026">
       <LegalSection title="Giriş">
         <p>
           RegGames, mobil uygulama ve oyunlar geliştiren bir yazılım geliştiricisidir. RegGames tarafından sunulan tüm uygulamalar ücretsiz olarak sunulmaktadır.
@@ -131,6 +131,27 @@ export default function PrivacyPage() {
         <div>
           <h3 className="font-heading font-semibold text-white text-base mb-1.5">Veri Silme</h3>
           <p>Kara Kutu sunucuda hiçbir oyuncu verisi tutmaz. Reklam verileri için Google&apos;ın araçları kullanılabilir.</p>
+        </div>
+      </LegalSection>
+
+      <LegalSection title="Web Sitesi (reggames.net)">
+        <p>
+          reggames.net, ziyaretçilerden ad veya e-posta adresi gibi kişisel bilgileri doğrudan toplamaz. Site Vercel üzerinde barındırılır; Vercel, hizmeti sunmak ve güvenliği sağlamak için IP adresi gibi teknik bağlantı verilerini işleyebilir.
+        </p>
+        <div>
+          <h3 className="font-heading font-semibold text-white text-base mb-1.5">Google Analytics ve Çerezler</h3>
+          <p>
+            Sitenin nasıl kullanıldığını anlamak için Google Analytics kullanırız; ancak <strong>yalnızca çerez çubuğunda &quot;Kabul et&quot;i seçersen</strong>. İzin vermezsen Google Analytics yüklenmez ve hiçbir analiz çerezi yazılmaz.
+          </p>
+          <p>
+            İzin verdiğinde Google Analytics; ziyaret edilen sayfalar, ziyaret süresi, cihaz ve tarayıcı türü, yaklaşık konum (ülke, şehir) ve siteye nereden gelindiği gibi bilgileri toplar. Bunun için tarayıcına <code>_ga</code> ve <code>_ga_*</code> adlı çerezler yazılır (en fazla 2 yıl). Google Analytics IP adreslerini kaydetmez. Veriler Google Analytics&apos;te en fazla 14 ay saklanır.
+          </p>
+          <p>
+            Tercihini istediğin zaman sayfanın altındaki <strong>&quot;Çerez tercihleri&quot;</strong> bağlantısından değiştirebilirsin. Tercihin bir çerezde değil, tarayıcının yerel depolamasında saklanır. Google gizlilik politikası:{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary">
+              policies.google.com/privacy
+            </a>
+          </p>
         </div>
       </LegalSection>
 

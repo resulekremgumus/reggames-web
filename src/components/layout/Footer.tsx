@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CookieSettingsButton from "@/components/consent/CookieSettingsButton";
 import { games, gameHref } from "@/lib/games";
 import { Locale, localePaths } from "@/lib/i18n";
 
@@ -22,6 +23,7 @@ const dict = {
     privacy: "Gizlilik Politikası",
     terms: "Kullanım Şartları",
     dataDeletion: "Veri Silme",
+    cookies: "Çerez tercihleri",
     notFound: "404",
     notFoundHref: "/404",
     rights: (year: number) => `© ${year} RegGames. Tüm hakları saklıdır.`,
@@ -37,6 +39,7 @@ const dict = {
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     dataDeletion: "Data Deletion",
+    cookies: "Cookie preferences",
     notFound: "404",
     notFoundHref: "/en/404",
     rights: (year: number) => `© ${year} RegGames. All rights reserved.`,
@@ -98,7 +101,12 @@ export default function Footer({ locale = "tr" }: { locale?: Locale }) {
             { href: localePaths[locale].dataDeletion, label: t.dataDeletion },
             { href: t.notFoundHref, label: t.notFound },
           ]}
-        />
+        >
+          <CookieSettingsButton
+            label={t.cookies}
+            className="text-left text-text-muted text-sm hover:text-white transition-colors bg-transparent border-0 p-0 cursor-pointer"
+          />
+        </FooterCol>
       </div>
 
       <div
@@ -115,9 +123,11 @@ export default function Footer({ locale = "tr" }: { locale?: Locale }) {
 function FooterCol({
   title,
   links,
+  children,
 }: {
   title: string;
   links: { href: string; label: string }[];
+  children?: React.ReactNode;
 }) {
   return (
     <div>
@@ -128,6 +138,7 @@ function FooterCol({
             {l.label}
           </Link>
         ))}
+        {children}
       </div>
     </div>
   );
